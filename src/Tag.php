@@ -1,4 +1,5 @@
 <?php namespace Watson\Taggly;
+use Illuminate\Support\Arr;
 
 class Tag {
 
@@ -46,9 +47,9 @@ class Tag {
 
     public function fillFromArray(array $tag)
     {
-        $this->setTag(array_get($tag, 'tag'));
-        $this->setCount(array_get($tag, 'count'));
-        $this->setUrl(array_get($tag, 'url'));
+        $this->setTag(Arr::get($tag, 'tag'));
+        $this->setCount(Arr::get($tag, 'count'));
+        $this->setUrl(Arr::get($tag, 'url'));
     }
 
     /**
